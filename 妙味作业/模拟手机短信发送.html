@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style type="text/css">
+        #div1{
+            width:240px;
+            height:200px;
+            border:1px solid #333;
+            background:#f1f1f1;
+            padding:10px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oDiv = document.getElementById("div1");
+            var oStrong = document.getElementById("strong1");
+            var oText = document.getElementById("text1");
+            var oBtn = document.getElementById("btn1");
+            var number = 0;
+            oBtn.onclick = function () {
+                var tempText = oStrong.innerHTML;
+                oDiv.innerHTML = tempText + oText.value + "<br />" + oDiv.innerHTML;
+                oText.value = "";
+            };
+            oStrong.onclick = function () {
+                number++;
+                if(number==1){
+                    oStrong.innerHTML = "李四 :";
+                    number = -1;
+                }
+                else {
+                    oStrong.innerHTML = "张三 :";
+                    number = 0;
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+    <strong id="strong1">
+        张三：
+    </strong>
+    <input id="text1" type="text" />
+    <input id="btn1" type="button" value="提交" />
+ 
+</body>
+</html>

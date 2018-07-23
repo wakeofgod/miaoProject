@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style type="text/css">
+        div{
+            width:50px;height:50px;background-color:red;position:absolute;top:0;left:0;font-size:30px;text-align:center;line-height:50px;
+        }
+    </style>
+    <script>
+        //逢10往下一行
+        //v字形
+        var k = 0;
+        window.onload = show10;
+        function show10() {
+            var aDiv = document.getElementsByTagName('div');
+            for (var i = 0; i < 50; i++) {
+                document.body.innerHTML += "<div>" + i + "</div>";
+                //br换行无效，用定位解决
+                //if((i+1)%10==0){
+                //    document.body.innerHTML += "<br />";
+                //}
+            }
+            for (var i = 0; i < aDiv.length; i++) {
+                aDiv[i].style.left = 10 + k * 50 + 'px';
+                aDiv[i].style.top = 10 + Math.floor(i/10)*50 + 'px';
+                if((i+1)%10==0){
+                    k = -1;
+                }
+                k++;
+                //aDiv[i].style.top = 10 + i * 50 + 'px';
+            }
+        }
+        function showV() {
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
